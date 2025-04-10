@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2024 STMicroelectronics
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/*
+ * Sensors declared here are possibly present on DIL24
+ */
+/*
+&arduino_i2c {
+	status = "okay";
+
+	lis2de18_18_x_nucleo_iks01a3: lis2de12@18 {
+		compatible = "st,lis2de12";
+		reg = <0x18>;
+		int1-gpios =  <&arduino_header 5 GPIO_ACTIVE_HIGH>; //A5 
+	};
+
+};
+*/
+&i2c1 {
+    status = "okay";
+    clock-frequency = <400000>;
+    
+    hts221: hts221@5f {
+        compatible = "st,hts221";
+        reg = <0x5f>;
+        status = "okay";
+    };
+
+    lsm6dso: lsm6dso@6a {
+        compatible = "st,lsm6dso";
+        reg = <0x6a>;
+        status = "okay";
+    };
+};
